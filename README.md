@@ -45,13 +45,14 @@ Create an `Account` class which should have the following functionality:
 
 
 ### CSV Data File
-  Bank::Account
 
-  The data, in order in the CSV, consists of:
+Bank::Account
 
-  - **ID** - (Fixnum) a unique identifier for that Account
-  - **Balance** - (Fixnum) the account balance amount, in cents (i.e., 150 would be $1.50)
-  - **OpenDate** - (Datetime) when the account was opened
+The data, in order in the CSV, consists of:
+
+- **ID** - (Fixnum) a unique identifier for that Account
+- **Balance** - (Fixnum) the account balance amount, in cents (i.e., 150 would be $1.50)
+- **OpenDate** - (Datetime) when the account was opened
 
 ### Optional:
   - Implement the optional requirement from Wave 1
