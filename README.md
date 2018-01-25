@@ -11,17 +11,17 @@ Today's Focus is object-oriented design. We will be working with the concept of 
 
 ### Requirements
 
-Create a `Bank` module which will contain your `Account` class and any future bank account logic.
-
-Create an `Account` class which should have the following functionality:
-- A new account should be created with an `ID` and an initial `balance`
-- Should have a `withdraw` method that accepts a single parameter which represents the amount of money that will be withdrawn. This method should return the updated account balance.
-- Should have a `deposit` method that accepts a single parameter which represents the amount of money that will be deposited. This method should return the updated account balance.
-- Should be able to access the current `balance` of an account at any time.
+1. Create a `Bank` module which will contain your `Account` class and any future bank account logic.
+2. Create an `Account` class which should have the following functionality:
+  - A new account should be created with an `ID` and an initial `balance`
+  - Should have a `withdraw` method that accepts a single parameter which represents the amount of money that will be withdrawn. This method should return the updated account balance.
+  - Should have a `deposit` method that accepts a single parameter which represents the amount of money that will be deposited. This method should return the updated account balance.
+  - Should be able to access the current `balance` of an account at any time.
 
 ### Error handling
-- A new account cannot be created with initial negative balance - this will `raise` an `ArgumentError` (might need to leverage those googling skills)
-- The `withdraw` method does not allow the account to go negative - Will output a warning message and return the original un-modified balance
+
+- A new account cannot be created with initial negative balance - this should `raise` an `ArgumentError` (leverage those Googling skills!)
+- The `withdraw` method does not allow the account to go negative - it should output a warning message and return the original un-modified balance
 
 ### Optional:
 - Create an `Owner` class which will store information about those who own the `Accounts`.
@@ -46,35 +46,34 @@ Create an `Account` class which should have the following functionality:
 
 ### CSV Data File
 
-Bank::Account
+**Bank::Account**
 
 The data, in order in the CSV, consists of:
-
 - **ID** - (Fixnum) a unique identifier for that Account
 - **Balance** - (Fixnum) the account balance amount, in cents (i.e., 150 would be $1.50)
 - **OpenDate** - (Datetime) when the account was opened
 
-### Optional:
-  - Implement the optional requirement from Wave 1
-  - Add the following **class** methods to your existing `Owner` class
-    - `self.all` - returns a collection of `Owner` instances, representing all of the Owners described in the CSV. See below for the CSV file specifications
-    - `self.find(id)` - returns an instance of `Owner` where the value of the id field in the CSV matches the passed parameter
+_Optional:_
+- Implement the optional requirement from Wave 1
+- Add the following **class** methods to your existing `Owner` class
+  - `self.all` - returns a collection of `Owner` instances, representing all of the Owners described in the CSV. See below for the CSV file specifications
+  - `self.find(id)` - returns an instance of `Owner` where the value of the id field in the CSV matches the passed parameter
 
-  Bank::Owner
+**Bank::Owner**
 
-  The data, in order in the CSV, consists of:
-    - **ID** - (Fixnum) a unique identifier for that Owner
-    - **Last Name** - (String) the owner's last name
-    - **First Name** - (String) the owner's first name
-    - **Street Addess** - (String) the owner's street address
-    - **City** - (String) the owner's city
-    - **State** - (String) the owner's state
+The data, in order in the CSV, consists of:
+  - **ID** - (Fixnum) a unique identifier for that Owner
+  - **Last Name** - (String) the owner's last name
+  - **First Name** - (String) the owner's first name
+  - **Street Addess** - (String) the owner's street address
+  - **City** - (String) the owner's city
+  - **State** - (String) the owner's state
 
-  To create the relationship between the accounts and the owners use the `account_owners` CSV file.
+To create the relationship between the accounts and the owners use the `account_owners` CSV file.
 
-  The data for this file, in order in the CSV, consists of:
-    - **Account ID** - (Fixnum) a unique identifier corresponding to an account
-    - **Owner ID** - (Fixnum) a unique identifier corresponding to an owner
+The data for this file, in order in the CSV, consists of:
+  - **Account ID** - (Fixnum) a unique identifier corresponding to an account
+  - **Owner ID** - (Fixnum) a unique identifier corresponding to an owner
 
 ## Part 3
 ### Learning Goals
