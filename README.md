@@ -53,12 +53,6 @@ The data, in order in the CSV, consists of:
 - **Balance** - (Fixnum) the account balance amount, in cents (i.e., 150 would be $1.50)
 - **OpenDate** - (Datetime) when the account was opened
 
-_Optional:_
-- Implement the optional requirement from Wave 1
-- Add the following **class** methods to your existing `Owner` class
-  - `self.all` - returns a collection of `Owner` instances, representing all of the Owners described in the CSV. See below for the CSV file specifications
-  - `self.find(id)` - returns an instance of `Owner` where the value of the id field in the CSV matches the passed parameter
-
 **Bank::Owner**
 
 The data, in order in the CSV, consists of:
