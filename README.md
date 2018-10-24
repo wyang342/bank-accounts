@@ -5,13 +5,13 @@ Today's Focus is object-oriented design. We will be working with the concept of 
 ## Part 1
 
 ### Learning Goals
-- Create a **class** inside of a **module**
+- Create a **class** 
 - Create **methods** inside the **class** to perform actions
-- Learn how Ruby does error handling
+- Learn how Python does error handling
 
 ### Requirements
 
-1. Create a `Bank` module which will contain your `Account` class and any future bank account logic.
+1. Create a `Bank` class which will contain your `Account` class and any future bank account logic.
 2. Create an `Account` class which should have the following functionality:
   - A new account should be created with an `ID` and an initial `balance`
   - Should have a `withdraw` method that accepts a single parameter which represents the amount of money that will be withdrawn. This method should return the updated account balance.
@@ -40,8 +40,8 @@ Today's Focus is object-oriented design. We will be working with the concept of 
 - Update the `Account` class to be able to handle all of these fields from the CSV file used as input.
   - For example, manually choose the data from the first line of the CSV file and ensure you can create a new instance of your Account using that data
 - Add the following **class** methods to your existing `Account` class
-  - `self.all` - returns a collection of `Account` instances, representing all of the Accounts described in the CSV. See below for the CSV file specifications
-  - `self.find(id)` - returns an instance of `Account` where the value of the id field in the CSV matches the passed parameter
+  - `.all_accounts` - returns a collection of `Account` instances, representing all of the Accounts described in the CSV. See below for the CSV file specifications
+  - `.find(id)` - returns an instance of `Account` where the value of the id field in the CSV matches the passed parameter
 
 
 ### CSV Data File
@@ -49,14 +49,14 @@ Today's Focus is object-oriented design. We will be working with the concept of 
 **Bank::Account**
 
 The data, in order in the CSV, consists of:
-- **ID** - (Fixnum) a unique identifier for that Account
-- **Balance** - (Fixnum) the account balance amount, in cents (i.e., 150 would be $1.50)
+- **ID** - (Integer) a unique identifier for that Account
+- **Balance** - (Integer) the account balance amount, in cents (i.e., 150 would be $1.50)
 - **OpenDate** - (Datetime) when the account was opened
 
 **Bank::Owner**
 
 The data, in order in the CSV, consists of:
-  - **ID** - (Fixnum) a unique identifier for that Owner
+  - **ID** - (Integer) a unique identifier for that Owner
   - **Last Name** - (String) the owner's last name
   - **First Name** - (String) the owner's first name
   - **Street Addess** - (String) the owner's street address
@@ -66,8 +66,8 @@ The data, in order in the CSV, consists of:
 To create the relationship between the accounts and the owners use the `account_owners` CSV file.
 
 The data for this file, in order in the CSV, consists of:
-  - **Account ID** - (Fixnum) a unique identifier corresponding to an account
-  - **Owner ID** - (Fixnum) a unique identifier corresponding to an owner
+  - **Account ID** - (Integer) a unique identifier corresponding to an account
+  - **Owner ID** - (Integer) a unique identifier corresponding to an owner
 
 ## Part 3
 ### Learning Goals
@@ -83,7 +83,7 @@ Create a `SavingsAccount` class which should inherit behavior from the `Account`
   - Does not allow the account to go below the $10 minimum balance - Will output a warning message and return the original un-modified balance
 
 It should include the following new method:
-- `#add_interest(rate)`: Calculate the interest on the balance and add the interest to the balance. Return the **interest** that was calculated and added to the balance (not the updated balance).
+- `add_interest(rate)`: Calculate the interest on the balance and add the interest to the balance. Return the **interest** that was calculated and added to the balance (not the updated balance).
 
   - Input rate is assumed to be a percentage (i.e. 0.25).
   - The formula for calculating interest is `balance * rate/100`
@@ -112,6 +112,6 @@ Create a `MoneyMarketAccount` class which should inherit behavior from the `Acco
 - Updated deposit logic:
   - Each transaction will be counted against the maximum number of transactions
   - Exception to the above: A deposit performed to reach or exceed the minimum balance of $10,000 is not counted as part of the 6 transactions.
-- `#add_interest(rate)`: Calculate the interest on the balance and add the interest to the balance. Return the interest that was calculated and added to the balance (not the updated balance).
+- `add_interest(rate)`: Calculate the interest on the balance and add the interest to the balance. Return the interest that was calculated and added to the balance (not the updated balance).
     - **Note** This is the same as the `SavingsAccount` interest.
-- `#reset_transactions`: Resets the number of transactions to zero
+- `reset_transactions`: Resets the number of transactions to zero
