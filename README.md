@@ -20,7 +20,7 @@ Today's Focus is object-oriented design. We will be working with the concept of 
 
 ### Error handling
 
-- A new account cannot be created with initial negative balance - this should `raise` an `ArgumentError` (leverage those Googling skills!)
+- A new account cannot be created with initial negative balance - this should `raise` an `Exception` (leverage those Googling skills!)
 - The `withdraw` method does not allow the account to go negative - it should output a warning message and return the original un-modified balance
 
 ### Optional:
